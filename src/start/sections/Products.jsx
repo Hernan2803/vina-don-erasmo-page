@@ -1,5 +1,6 @@
 import { ThemeContext } from '../../context/ThemeContext'
 import { useContext } from 'react'
+import ProductsMenu from '../components/ProductsMenu';
 
 function Products({ current }) {
 
@@ -7,7 +8,10 @@ function Products({ current }) {
 
     return (
         <section className={theme.mainBg} id="products">
-            <h1>Products</h1>
+            <div className="md:container md:mx-auto">
+                <h1>P</h1>
+                <ProductsMenu/>
+            </div>
         </section>
     )
 }
