@@ -1,7 +1,7 @@
 import { ThemeContext } from '../context/ThemeContext';
 import { useContext, useRef, useState } from 'react';
 import Navbar from './components/Navbar'
-import Start from './sections/Start';
+import Home from './sections/Home';
 import Products from './sections/Products';
 import About from './sections/About';
 import Blog from './sections/Blog';
@@ -28,7 +28,7 @@ export function Layout() {
     return (
         <div ref={body} className={"h-screen overflow-y-scroll" + theme.scrollbar} onScroll={scrollHandler}>
             <Navbar current={page}/>
-            <Start/>
+            <Home/>
             <Products/>
             <About/>
             <Blog/>
