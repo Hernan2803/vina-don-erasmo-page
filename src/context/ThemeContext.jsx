@@ -3,7 +3,7 @@ import { MuiThemeContext } from "./MuiThemeContext";
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 
-const LIGHT = ({
+const themeLight = ({
     "folder" : "light",
     "scrollbar": " light-scrollbar",
     "buttonIcon" : <DarkModeIcon className="text-neutral-700"/>,
@@ -33,36 +33,6 @@ const LIGHT = ({
     "primaryBg" : " bg-cover bg-light-pattern",
     "secondaryBg" : " bg-cover bg-light-alt-pattern",
 });
-const DARK = ({
-    "folder" : "dark",
-    "scrollbar": " dark-scrollbar",
-    "buttonIcon": <LightModeIcon className="text-neutral-300"/>,
-    "iconHover": " text-neutral-300 hover:text-white",
-    "sidebarBg": " bg-neutral-850",
-    "hoverSidebar" : " hover:bg-neutral-500 hover:text-white",
-    "textSidebar" : " text-neutral-300",
-    "navbarBg": " bg-neutral-900",
-    "activeNavbar" : " bg-neutral-800",
-    "hoverNavbar" : " hover:bg-neutral-600 hover:text-white",
-    "textNavbar" : " text-neutral-300",
-    "borderNavbar" : " border-neutral-300",
-    "mainBorder" : " border-white",
-    "mainBg" : " bg-neutral-800",
-    "lightBg" : " bg-neutral-750",
-    "highBg" : " bg-neutral-600",
-    "softBg" : " bg-black/40",
-    "lightText" : " text-neutral-400",
-    "mainText" : " text-white",
-    "invText" : " text-black",
-    "primaryAccent" : " bg-main-red",
-    "secondaryAccent" : " bg-main-purple",
-    "primaryText" : " text-main-red",
-    "secondaryText" : " text-main-purple",
-    "primaryButton" : " border-main-red hover:bg-main-red hover:text-black",
-    "secondaryButton" : " border-main-purple hover:bg-main-purple hover:text-black",
-    "primaryBg" : " bg-cover bg-dark-pattern",
-    "secondaryBg" : " bg-cover bg-dark-alt-pattern",
-});
 
 export const ThemeContext = createContext();
 export function ThemeContextProvider(props) {
@@ -70,16 +40,16 @@ export function ThemeContextProvider(props) {
     let theme, setTheme;
     let localTheme = localStorage.getItem('theme');
     if (localTheme === 'dark') {
-        [theme, setTheme] = useState(DARK);
+        [theme, setTheme] = useState(themeLight);//themeDark
     } else {
-        [theme, setTheme] = useState(LIGHT);
+        [theme, setTheme] = useState(themeLight);
     }
     function toggleTheme() {
         toggleMui();
         if (theme.mainBg === " bg-neutral-800") {
-            setTheme(LIGHT);
+            setTheme(themeLight);
         } else {
-            setTheme(DARK);
+            setTheme(themeLight);//themeDark
         }
     }
 
