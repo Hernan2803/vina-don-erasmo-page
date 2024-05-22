@@ -13,10 +13,10 @@ const themeLight = ({
     "secondaryText" : " text-main-green-900",
     "softBg" : " bg-white/40",
     "mainText" : " text-black",
-    "activeNavbar" : " font-bold text-main-purple-950 md:bg-transparent",
-    "hoverNavbar" : " hover:font-bold hover:underline hover:text-main-green-900",
-    "textNavbar" : " text-gray-900",
-    "borderNavbar" : " border-neutral-700",
+    "activeNavbar" : " font-bold text-main-purple-100 md:bg-transparent",
+    "hoverNavbar" : " hover:font-bold hover:underline hover:text-main-green-700",
+    "textNavbar" : " text-gray-700",
+    "navbarBg": " bg-main-purple-900"
 });
 
 export const ThemeContext = createContext();

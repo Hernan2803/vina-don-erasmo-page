@@ -4,11 +4,6 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 const themeLight = createTheme({
     palette: {
         mode: "light",
-    },
-    typography: {
-        fontFamily: `"Montserrat", sans-serif`
-    },
-    palette: {
         primary: {
             main: '#560530',
         },
@@ -16,17 +11,15 @@ const themeLight = createTheme({
             main: '#026530',
         },
     },
-    
+
+    typography: {
+        fontFamily: `"Montserrat", sans-serif`
+    }
 });
 
 const themeDark = createTheme({
     palette: {
         mode: "dark",
-    },
-    typography: {
-        fontFamily: `"Montserrat", sans-serif`
-    },
-    palette: {
         primary: {
             main: '#560530',
         },
@@ -34,7 +27,9 @@ const themeDark = createTheme({
             main: '#026530',
         },
     },
-    
+    typography: {
+        fontFamily: `"Montserrat", sans-serif`
+    },
 });
 
 export const MuiThemeContext = createContext();
