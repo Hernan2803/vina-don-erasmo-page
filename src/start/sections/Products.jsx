@@ -9,7 +9,6 @@ function Products({ current }) {
     return (
         <section className={theme.mainBg} id="products">
             <div className="md:container md:mx-auto">
-                <h1>P</h1>
                 <ProductsMenu/>
             </div>
         </section>
