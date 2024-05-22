@@ -49,7 +49,7 @@ function Navbar({ current }) {
     }, [current]);
 
     return (
-        <nav className={"sticky top-0 z-50 border-gray-200" + theme.navbarBg}>
+        <nav className={"sticky top-0 z-50" + theme.navbarBg}>
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                     <button type="button" className={"inline-flex items-center justify-center rounded-md p-2 focus:outline-none" + theme.hoverNavbar} aria-controls="mobile-menu" aria-expanded="false" onClick={toggleCollapse}>
@@ -65,9 +65,9 @@ function Navbar({ current }) {
                     </Link>
                 </div>
                 <div className="hidden w-full md:block md:w-auto" id="navbar-dropdown">
-                    <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white">
+                    <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
                         <li>
-                            <a href="#home" className={navStyle[0] + " bg-transparent md:p-0"} onClick={() => setSelection('#home')}>Inicio</a>
+                            <a href="#home" className={navStyle[0] + " md:p-0"} onClick={() => setSelection('#home')}>Inicio</a>
                         </li>
                         <li>
                             <a href="#products" className={navStyle[1]} onClick={() => setSelection('#products')}>Productos</a>
