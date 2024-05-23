@@ -1,5 +1,6 @@
 {
-  "name": "template_staticweb",
+  "homepage": "./vina-don-erasmo-page",
+  "name": "vina-don-erasmo-page",
   "private": true,
   "version": "0.0.0",
   "type": "commonjs",
@@ -7,13 +8,15 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@mui/icons-material": "^5.15.16",
     "@mui/material": "^5.15.16",
+    "gh-pages": "^6.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.23.0"
@@ -29,7 +32,6 @@
     "eslint-plugin-react-refresh": "^0.4.6",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.3",
-    "vite": "^5.2.0",
-    "homepage": "https://Hernan2803.github.io/vina-don-erasmo-page"
+    "vite": "^5.2.0"
   }
 }
