@@ -5,4 +5,9 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: '/vina-don-erasmo-page/',
+  server: {
+    headers: {
+      'Permissions-Policy': 'interest-cohort=()'
+    }
+  }
 })
