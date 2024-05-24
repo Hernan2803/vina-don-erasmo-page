@@ -15,22 +15,21 @@
         "translations": {
             "sp": {
                 "name": "Licor de guinda",
-                "description": "x"
+                "description": "y"
             }
         },
         "category": "liquor",
-        "image": "x.jpg"
+        "image": "y.jpg"
     },
     {
         "sku":"003",
         "translations": {
             "sp": {
                 "name": "Licor de apio",
-                "description": "x"
+                "description": "z"
             }
         },
         "category": "liquor",
-        "image": "x.jpg"
+        "image": "z.jpg"
     }
-
 ]
