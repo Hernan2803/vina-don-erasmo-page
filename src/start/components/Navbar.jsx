@@ -10,7 +10,7 @@ function Navbar({ current }) {
     const [collapse, setCollapse] = useState("hidden");
     const { theme, toggleTheme } = useContext(ThemeContext);
     const [navStyle, setNavStyle] = useState([
-        "block py-2 px-3 rounded" + theme.activeNavbar + theme.mainText,
+        "block py-2 px-3 rounded" + theme.activeNavbar,
         "block py-2 px-3 rounded" + theme.textNavbar + theme.hoverNavbar,
         "block py-2 px-3 rounded" + theme.textNavbar + theme.hoverNavbar,
         "block py-2 px-3 rounded" + theme.textNavbar + theme.hoverNavbar,
@@ -31,7 +31,7 @@ function Navbar({ current }) {
     useEffect(() => {
         setNavStyle(paths.map((element) => {
             if (selection === element) {
-                return "px-3 py-2 rounded-md" + theme.activeNavbar + theme.primaryText;
+                return "px-3 py-2 rounded-md" + theme.activeNavbar;
             } else {
                 return "px-3 py-2 rounded-md" + theme.textNavbar + theme.borderNavbar + theme.hoverNavbar;
             }
@@ -41,7 +41,7 @@ function Navbar({ current }) {
     useEffect(() => {
         setNavStyle(paths.map((_, idx) => {
             if (current === idx) {
-                return "px-3 py-2 rounded-md" + theme.activeNavbar + theme.primaryText;
+                return "px-3 py-2 rounded-md" + theme.activeNavbar;
             } else {
                 return "px-3 py-2 rounded-md" + theme.textNavbar + theme.borderNavbar + theme.hoverNavbar;
             }
@@ -67,7 +67,7 @@ function Navbar({ current }) {
                 <div className="hidden w-full md:block md:w-auto" id="navbar-dropdown">
                     <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
                         <li>
-                            <a href="#home" className={navStyle[0] + " md:p-0"} onClick={() => setSelection('#home')}>Inicio</a>
+                            <a href="#home" className={navStyle[0]} onClick={() => setSelection('#home')}>Inicio</a>
                         </li>
                         <li>
                             <a href="#products" className={navStyle[1]} onClick={() => setSelection('#products')}>Productos</a>
