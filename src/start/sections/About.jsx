@@ -7,19 +7,15 @@ function About() {
     const { theme } = useContext(ThemeContext);
 
     return (
-        <div>
-            {/* <section className={theme.mainBg} id="about">
-                <h1>Nosotros</h1>
-            </section> */}
-        
-            <section className="overflow-hidden pt-20 pb-12 lg:pt-[120px] lg:pb-[90px] bg-white dark:bg-dark" id="about">
-                <div className="container mx-auto">
-                    <div className="flex flex-wrap items-center justify-between -mx-4">
-                        <div className="w-full px-4 lg:w-6/12">
-                            <div className="flex items-center -mx-3 sm:-mx-4">
-                                <div className="w-full px-3 sm:px-4 xl:w-1/2">
-                                    <div className="py-3 sm:py-4">
-                                        <img src="https://i.ibb.co/gFb3ns6/image-1.jpg" alt="" className="w-full rounded-2xl"/>
+        <section className={"pt-20 pb-12 lg:pt-[120px] lg:pb-[90px]" + theme.mainBg} id="about">
+            <h2 className={theme.sectionText}>Nosotros</h2>
+            <div className="container mx-auto">
+                <div className="flex flex-wrap items-center justify-between -mx-4">
+                    <div className="w-full px-4 lg:w-6/12">
+                        <div className="flex items-center -mx-3 sm:-mx-4">
+                            <div className="w-full px-3 sm:px-4 xl:w-1/2">
+                                <div className="py-3 sm:py-4">
+                                    <img src="https://i.ibb.co/gFb3ns6/image-1.jpg" alt="" className="w-full rounded-2xl"/>
                                 </div>
                                 <div className="py-3 sm:py-4">
                                     <img src="https://i.ibb.co/rfHFq15/image-2.jpg" alt="" className="w-full rounded-2xl"/>
@@ -39,9 +35,6 @@ function About() {
 
                     <div className="w-full px-4 lg:w-1/2 xl:w-5/12">
                         <div className="mt-10 lg:mt-0">
-                            <span className="block mb-4 text-lg font-semibold text-primary">
-                                {data.about}
-                            </span>
                             <h2 className="mb-5 text-3xl font-bold text-dark dark:text-white sm:text-[40px]/[48px]">
                                 {data.name}
                             </h2>
@@ -55,8 +48,7 @@ function About() {
                     </div>
                 </div>
             </div>
-            </section>
-        </div>
+        </section>
     )
 }
 

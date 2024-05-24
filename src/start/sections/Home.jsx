@@ -6,8 +6,8 @@ function Home() {
     const { theme } = useContext(ThemeContext);
 
     return (
-        <section className={theme.mainBg} id="home">
-            <div className="md:container md:mx-auto">
+        <section className={"pt-20 pb-12 lg:pt-[120px] lg:pb-[90px] + theme.mainBg" + theme.mainBg} id="home">
+            <div className="container mx-auto">
                 <Carousel/>
             </div>
         </section>
