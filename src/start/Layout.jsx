@@ -5,6 +5,7 @@ import Home from './sections/Home';
 import Products from './sections/Products';
 import About from './sections/About';
 import Blog from './sections/Blog';
+import Footer from './components/Footer';
 
 export function Layout() {
 
@@ -32,6 +33,7 @@ export function Layout() {
             <Products/>
             <About/>
             <Blog/>
+            <Footer/>
         </div>
     )
 }
