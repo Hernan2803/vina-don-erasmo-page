@@ -17,7 +17,8 @@ const themeLight = ({
     "activeNavbar" : " font-bold text-main-purple-100",
     "hoverNavbar" : " hover:font-bold hover:underline hover:text-main-green-700",
     "textNavbar" : " text-gray-700",
-    "navbarBg": " bg-main-purple-900"
+    "navbarBg": " bg-main-purple-900",
+    "footerBg": " bg-main-purple-300"
 });
 
 export const ThemeContext = createContext();
