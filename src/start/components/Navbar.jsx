@@ -49,7 +49,7 @@ function Navbar({ current }) {
     }, [current]);
 
     return (
-        <nav className={"sticky top-0 z-50" + theme.navbarBg}>
+        <nav className={"fixed top-0 z-50 w-full" + theme.navbarBg}>
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                     <button type="button" className={"inline-flex items-center justify-center rounded-md p-2 focus:outline-none" + theme.hoverNavbar} aria-controls="mobile-menu" aria-expanded="false" onClick={toggleCollapse}>
@@ -76,7 +76,7 @@ function Navbar({ current }) {
                             <a href="#about" className={navStyle[2]} onClick={() => setSelection('#about')}>Nosotros</a>
                         </li>
                         <li>
-                            <a href="#blog" className={navStyle[3]} onClick={() => setSelection('#blog')}>Blog</a>
+                            <a href="#blog" className={navStyle[3]} onClick={() => setSelection('#blog')}>Novedades</a>
                         </li>
                     </ul>
                 </div>
