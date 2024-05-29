@@ -1,8 +1,7 @@
 import { useContext, useState } from 'react'
-import { Layout as Start } from './start/Layout'; 
+import { Layout as Start } from './start/Layout'
 
 function App() {
-
     return (
         <Start/>
     )
