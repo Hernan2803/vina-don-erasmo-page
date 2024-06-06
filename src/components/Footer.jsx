@@ -1,8 +1,8 @@
-import { ThemeContext } from '../../context/ThemeContext'
+import { ThemeContext } from './../context/ThemeContext'
 import { useContext } from 'react'
-import { Link } from "react-router-dom";
-import GitHubIcon from '@mui/icons-material/GitHub';
-import FacebookIcon from '@mui/icons-material/Facebook';
+import { Link } from "react-router-dom"
+import GitHubIcon from '@mui/icons-material/GitHub'
+import FacebookIcon from '@mui/icons-material/Facebook'
 
 function Footer() {
 

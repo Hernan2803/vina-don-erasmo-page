@@ -1,6 +1,6 @@
 import { useContext } from 'react'
-import { ThemeContext } from '../../context/ThemeContext'
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { ThemeContext } from './../context/ThemeContext'
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 
 function BlogCard({publication}) {
 

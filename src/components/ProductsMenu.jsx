@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect } from 'react'
-import { ThemeContext } from '../../context/ThemeContext'
+import { ThemeContext } from './../context/ThemeContext'
 import WineBarIcon from '@mui/icons-material/WineBar'
 import LiquorIcon from '@mui/icons-material/Liquor'
 import products from './../context/ProductsContext.json'

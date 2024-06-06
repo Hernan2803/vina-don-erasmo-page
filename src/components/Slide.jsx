@@ -1,8 +1,8 @@
-import { ThemeContext } from '../../context/ThemeContext'
+import { ThemeContext } from '../context/ThemeContext'
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { useEffect, useContext, useState } from 'react'
-import data from './../context/CarrouselContext.json';
+import data from './../context/CarrouselContext.json'
 
 function Slide({next, prev, id}) {
     const { theme } = useContext(ThemeContext)

@@ -1,7 +1,7 @@
 import React from "react";
-import { useContext } from "react";
+import { useContext } from "react"
 import CloseIcon from '@mui/icons-material/Close';
-import { ThemeContext } from "../../context/ThemeContext";
+import { ThemeContext } from "./../context/ThemeContext"
 
 const MenuItems = ({showMenu, active}) => {
   const { theme } = useContext(ThemeContext);

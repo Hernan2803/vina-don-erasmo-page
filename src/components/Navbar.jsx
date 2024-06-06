@@ -1,8 +1,8 @@
-import { useState, useEffect, useContext } from "react";
-import MenuIcon from '@mui/icons-material/Menu';
-import { Link } from "react-router-dom";
-import { ThemeContext } from "../../context/ThemeContext";
-import MenuItems from "./MenuItems";
+import { useState, useEffect, useContext } from "react"
+import MenuIcon from '@mui/icons-material/Menu'
+import { Link } from "react-router-dom"
+import { ThemeContext } from "./../context/ThemeContext";
+import MenuItems from "./MenuItems"
 
 function Navbar({ current }) {
     const paths = ["#home", "#products", "#about", "#blog"];
