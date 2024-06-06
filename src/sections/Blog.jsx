@@ -1,4 +1,4 @@
-import { ThemeContext } from '../../context/ThemeContext'
+import { ThemeContext } from './../context/ThemeContext'
 import { useContext } from 'react'
 import BlogCard from '../components/BlogCard'
 import publications from './../context/BlogContext.json' 

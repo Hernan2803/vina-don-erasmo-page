@@ -1,4 +1,4 @@
-import { ThemeContext } from '../../context/ThemeContext'
+import { ThemeContext } from './../context/ThemeContext'
 import { useContext } from 'react'
 import data from "./../context/AboutContext.json"
 
@@ -53,5 +53,3 @@ function About() {
 }
 
 export default About
-
-

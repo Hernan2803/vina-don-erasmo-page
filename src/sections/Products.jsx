@@ -1,6 +1,6 @@
-import { ThemeContext } from '../../context/ThemeContext'
+import { ThemeContext } from './../context/ThemeContext'
 import { useContext } from 'react'
-import ProductsMenu from '../components/ProductsMenu'
+import ProductsMenu from './../components/ProductsMenu'
 
 function Products() {
 
