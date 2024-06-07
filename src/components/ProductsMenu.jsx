@@ -25,7 +25,7 @@ function ProductsMenu() {
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                             {products.map(productInfo => (
                                 productInfo.category === select ? (
-                                    <ProductsCard key={"productCard" + productInfo.sku} product={productInfo} />
+                                    <ProductsCard key={"productCard" + productInfo.id} product={productInfo} />
                                 ) : null
                             ))}
                         </div>

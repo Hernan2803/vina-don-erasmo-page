@@ -1,6 +1,6 @@
 [
     {
-        "sku":"001",
+        "id":"001",
         "translations": {
             "sp": {
                 "name": "Vino",
@@ -11,7 +11,7 @@
         "image": "x.jpg"
     },
     {
-        "sku":"002",
+        "id":"002",
         "translations": {
             "sp": {
                 "name": "Licor de guinda",
@@ -22,7 +22,7 @@
         "image": "y.jpg"
     },
     {
-        "sku":"003",
+        "id":"003",
         "translations": {
             "sp": {
                 "name": "Licor de apio",
