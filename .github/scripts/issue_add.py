@@ -1,51 +1,52 @@
 import os
-import re
-import requests
+import json
+from github import Github
 
-# Obtener el token de GitHub desde las variables de entorno
+# Define specific parameters
 GITHUB_TOKEN = os.getenv('GH_TOKEN')
 REPO_OWNER = 'Hernan2803'
 REPO_NAME = 'vina-don-erasmo-page'
+ISSUE_NAME = 'Add'
+LABEL_NAME = 'add/edit'
 
-# El tag específico que estamos buscando
-TAG = 'add element'
-
-# Definir la URL de la API de GitHub para buscar issues
-url = f'https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}/issues'
-
-# Configurar la cabecera de autenticación
-headers = {
-    'Authorization': f'token {GITHUB_TOKEN}',
-    'Accept': 'application/vnd.github.v3+json'
+categoriesPath= {
+    'about': './src/context/AboutContext.json',
+    'blog': './src/context/BlogContext.json',
+    'product': './src/context/ProductsContext.json',
 }
 
-# Hacer una solicitud GET a la API de GitHub para obtener issues abiertas
-response = requests.get(url, headers=headers)
-issues = response.json()
+def main():
+    g = Github(GITHUB_TOKEN)
+    repo = g.get_repo(REPO_NAME)
 
-# Regex para encontrar URLs de imágenes en el cuerpo de la issue
-img_url_pattern = re.compile(r'(https://user-images.githubusercontent.com/[^ ]+)')
+    # Get open issues with the specific name and tag
+    issues = repo.get_issues(state="open", labels=[LABEL_NAME])
+    relevant_issues = [issue for issue in issues if ISSUE_NAME in issue.title]
 
-# Filtrar las issues por el tag específico
-for issue in issues:
-    if 'pull_request' in issue:
-        # Ignorar los pull requests
-        continue
-    labels = [label['name'] for label in issue['labels']]
-    if TAG in labels:
-        print(f"Issue encontrada: #{issue['number']} - {issue['title']}")
-        print(f"Descripción: {issue['body']}")
+    with open(relevant_issues.body, 'r') as file:
+        data = json.load(file)
 
-        # Encontrar todas las URLs de imágenes en el cuerpo de la issue
-        img_urls = img_url_pattern.findall(issue['body'])
-        for img_url in img_urls:
-            print(f"Descargando imagen: {img_url}")
-            img_data = requests.get(img_url).content
-            img_name = img_url.split('/')[-1]
-            with open(img_name, 'wb') as handler:
-                handler.write(img_data)
-            print(f"Imagen guardada como {img_name}")
+    categories = {}
 
-        break
-else:
-    print(f"No se encontró ninguna issue con el tag '{TAG}'")
+    # Separate elements by category
+    for element in data:
+        category = element['category']
+        if category not in categories:
+            categories[category] = []
+        categories[category].append(element)
+
+    for categoria, items in categories.items():
+        for item in items:
+            with open(categoriesPath[categoria], 'r') as f:
+                jsonData = json.load(f)
+            itemData = item['item']
+
+            removedData = [x for x in jsonData if x['id'] != itemData['id']]
+
+            removedData.append(itemData)
+
+            with open(categoriesPath[categoria], 'w') as f:
+                json.dump(removedData, f, indent=2)
+
+if __name__ == "__main__":
+    main()
