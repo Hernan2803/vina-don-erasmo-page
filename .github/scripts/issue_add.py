@@ -23,13 +23,12 @@ def main():
     issues = repo.get_issues(state="open", labels=[LABEL_NAME])
     relevant_issues = [issue for issue in issues if ISSUE_NAME in issue.title]
 
-    with open(relevant_issues.body, 'r') as file:
-        data = json.load(file)
+    issue = repo.get_issue(number=relevant_issues[0].number)
 
     categories = {}
 
     # Separate elements by category
-    for element in data:
+    for element in json.loads(issue.body):
         category = element['category']
         if category not in categories:
             categories[category] = []
