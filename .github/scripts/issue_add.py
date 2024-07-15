@@ -17,7 +17,7 @@ categoriesPath= {
 
 def main():
     g = Github(GITHUB_TOKEN)
-    repo = g.get_repo(REPO_NAME)
+    repo = g.get_repo(f'{REPO_OWNER}/{REPO_NAME}')
 
     # Get open issues with the specific name and tag
     issues = repo.get_issues(state="open", labels=[LABEL_NAME])
