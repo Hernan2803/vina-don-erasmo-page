@@ -35,6 +35,8 @@ def main():
             categories[category] = []
         categories[category].append(element)
 
+    print(categories)
+
     for categoria, items in categories.items():
         for item in items:
             with open(categoriesPath[categoria], 'r') as f:
