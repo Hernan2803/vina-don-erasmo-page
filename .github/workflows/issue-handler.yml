@@ -6,7 +6,6 @@ on:
 
 jobs:
   read_issue:
-    if: github.event.issue.state == 'open' && contains(github.event.issue.labels.*.name, 'add/edit')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
