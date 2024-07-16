@@ -42,4 +42,4 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         GITHUB_REPOSITORY: ${{ github.repository }}
-      run: python update_json.py -i ${{ github.event.issue.number }}
+      run: python issue_close.py -i ${{ github.event.issue.number }}
