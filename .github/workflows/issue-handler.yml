@@ -33,7 +33,7 @@ jobs:
       with:
         token: ${{ secrets.GH_TOKEN }}
         commit-message: "Update JSON file"
-        branch: update-json-file
+        branch: update-json-file-${{ github.event.issue.number }}
         title: "Update JSON file"
         body: "This PR updates the JSON file with the latest data."
         base: main
