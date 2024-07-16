@@ -1,35 +1,46 @@
 [
-    {
-        "id":"001",
-        "translations": {
-            "sp": {
-                "name": "Vino",
-                "description": "x"
-            }
-        },
-        "category": "wine",
-        "image": "x.jpg"
+  {
+    "id": "001",
+    "translations": {
+      "sp": {
+        "name": "Vino",
+        "description": "x"
+      }
     },
-    {
-        "id":"002",
-        "translations": {
-            "sp": {
-                "name": "Licor de guinda",
-                "description": "y"
-            }
-        },
-        "category": "liquor",
-        "image": "y.jpg"
+    "category": "wine",
+    "image": "x.jpg"
+  },
+  {
+    "id": "002",
+    "translations": {
+      "sp": {
+        "name": "Licor de guinda",
+        "description": "y"
+      }
     },
-    {
-        "id":"003",
-        "translations": {
-            "sp": {
-                "name": "Licor de apio",
-                "description": "z"
-            }
-        },
-        "category": "liquor",
-        "image": "z.jpg"
-    }
+    "category": "liquor",
+    "image": "y.jpg"
+  },
+  {
+    "id": "003",
+    "translations": {
+      "sp": {
+        "name": "Licor de apio",
+        "description": "z"
+      }
+    },
+    "category": "liquor",
+    "image": "z.jpg"
+  },
+  {
+    "id": "20240716000552",
+    "translations": {
+      "sp": {
+        "name": "Producto nuevo",
+        "description": "P"
+      }
+    },
+    "category": "wine",
+    "imageUrl": ""
+  }
 ]
