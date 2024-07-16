@@ -37,3 +37,9 @@ jobs:
         title: "Update JSON file"
         body: "This PR updates the JSON file with the latest data."
         base: main
+
+    - name: Close GitHub Issue
+      env:
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        GITHUB_REPOSITORY: ${{ github.repository }}
+      run: python update_json.py -i ${{ github.event.issue.number }}
