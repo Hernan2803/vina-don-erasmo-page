@@ -8,6 +8,7 @@ jobs:
   read_issue:
     if: github.event.issue.state == 'open' && contains(github.event.issue.labels.*.name, 'add/edit')
     runs-on: ubuntu-latest
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
@@ -24,13 +25,12 @@ jobs:
 
     - name: Run Python script
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-        python .github/scripts/issue_add.py
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      run: python .github/scripts/issue_add.py
 
     - name: Commit and push changes
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
