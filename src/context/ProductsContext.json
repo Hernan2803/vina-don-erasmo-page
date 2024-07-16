@@ -42,5 +42,16 @@
     },
     "category": "wine",
     "imageUrl": ""
+  },
+  {
+    "id": "20240716182707",
+    "translations": {
+      "sp": {
+        "name": "Awa de uwu",
+        "description": "uwu"
+      }
+    },
+    "category": "liquor",
+    "imageUrl": ""
   }
 ]
