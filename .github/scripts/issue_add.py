@@ -35,17 +35,18 @@ def main():
         categories[category].append(element)
 
     for categoria, items in categories.items():
+        finalData = []
         for item in items:
             with open(categoriesPath[categoria], 'r') as f:
                 jsonData = json.load(f)
             itemData = item['item']
 
-            removedData = [x for x in jsonData if x['id'] != itemData['id']]
+            finalData = [x for x in jsonData if x['id'] != itemData['id']]
 
-            removedData.append(itemData)
+            finalData.append(itemData)
 
-            with open(categoriesPath[categoria], 'w') as f:
-                json.dump(removedData, f, indent=2)
+        with open(categoriesPath[categoria], 'w') as f:
+            json.dump(finalData, f, indent=2)
 
 if __name__ == "__main__":
     main()
