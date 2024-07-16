@@ -28,14 +28,12 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
       run: python .github/scripts/issue_add.py
 
-    - name: Commit and push changes
-      env:
-        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-      run: |
-        git config --global user.name 'github-actions[bot]'
-        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}
-        git status
-        git add .
-        git commit -m "Update JSON file"
-        git push origin HEAD:main
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v4
+      with:
+        token: ${{ secrets.GH_TOKEN }}
+        commit-message: "Update JSON file"
+        branch: update-json-file
+        title: "Update JSON file"
+        body: "This PR updates the JSON file with the latest data."
+        base: main
