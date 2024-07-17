@@ -1,10 +1,26 @@
-import { useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { ThemeContext } from './../context/ThemeContext'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
+import blogTag from './../context/BlogTagContext.jsx'
 
 function BlogCard({publication}) {
 
     const { theme } = useContext(ThemeContext)
+    const [blogTagMenu, setBlogTagMenu] = useState([]);
+
+    useEffect(() => {
+        const blogTagMenu = blogTag();
+        setBlogTagMenu(blogTagMenu);
+    }, []);
+
+    const getIconTag = (id) => {
+        const item = blogTagMenu.find(d => d.id === id);
+        return item ? item.icon : '';
+    };
+    const getNameTag = (id) => {
+        const item = blogTagMenu.find(d => d.id === id);
+        return item ? item.name : '';
+    };
 
     let dateString = publication.id.slice(0, 8);
 
@@ -38,7 +54,7 @@ function BlogCard({publication}) {
         <article className="p-6 bg-white rounded-lg border border-gray-200 shadow-md">
             <div className="flex justify-between items-center mb-5 text-gray-500">
                 <span className="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded">
-                {publication.tag}
+                    {getIconTag(publication.tag)}{getNameTag(publication.tag)}
                 </span>
 
                 <span className="text-sm">{timeMsg}</span>
