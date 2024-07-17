@@ -1,0 +1,10 @@
+[
+  {
+    "id": "liquor",
+    "name": "Licores"
+  },
+  {
+    "id": "wine",
+    "name": "Vinos"
+  }
+]
