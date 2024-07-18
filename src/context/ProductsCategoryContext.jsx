@@ -1,19 +1,14 @@
-import WineBarIcon from '@mui/icons-material/WineBar';
+import GradeIcon from '@mui/icons-material/Grade';
 import LiquorIcon from '@mui/icons-material/Liquor';
-import productsCategoryJSON from './ProductsCategoryContext.json';
+import WineBarIcon from '@mui/icons-material/WineBar';
 
 const productsCategory = () => {
 
-  const productsCategoryContext = [];
-  productsCategoryJSON.map((category) => {
-    productsCategoryContext.push(
-      {
-        'id': category.id,
-        'name': category.name,
-        'icon': category.id === 'wine' ? <WineBarIcon/> : <LiquorIcon/>
-      }
-    );
-  });
+  const productsCategoryContext = [
+    {'id': 'liquor', 'name': 'Licores', 'icon': <WineBarIcon/>},
+    {'id': 'wine', 'name': 'Vinos', 'icon': <LiquorIcon/>},
+    {'id': 'o', 'name': 'Otros', 'icon': <GradeIcon/>}
+  ];
 
   return productsCategoryContext;
 };
