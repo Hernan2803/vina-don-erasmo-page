@@ -3,9 +3,11 @@ import PropTypes from 'prop-types';
 import { ThemeContext } from './../context/ThemeContext';
 import { red } from '@mui/material/colors';
 import { styled } from '@mui/material/styles';
-import {Avatar, Card, CardHeader, CardMedia, CardContent, CardActions, Collapse, IconButton, Typography} from '@mui/material';
+import {Avatar, Card, CardHeader, CardMedia, CardContent, CardActions, IconButton, Typography} from '@mui/material';
 import ZoomOutMapIcon from '@mui/icons-material/ZoomOutMap';
 import blogTag from './../context/BlogTagContext.jsx';
+import ExpandedInfo from './ExpandedInfo.jsx';
+import getDateConverted from './../utils/getDateConverted';
 
 const ExpandMore = styled((props) => {
     const { expand, ...other } = props;
@@ -58,19 +60,10 @@ function BlogCard({publication}) {
             <CardActions disableSpacing>
                 <ExpandMore expand={expanded} onClick={() => handleExpandClick()} aria-label='show more'><ZoomOutMapIcon/></ExpandMore>
             </CardActions>
-            <Collapse in={expanded} timeout='auto' unmountOnExit>
-                <CardContent>
-                    <Typography paragraph>
-                        Heat 1/2 cup of the broth in a pot until simmering, add saffron and set
-                        aside for 10 minutes.
-                    </Typography>
-                </CardContent>
-            </Collapse>
+            <ExpandedInfo data={publication} expanded={expanded} setExpanded={handleExpandClick} icon={getIconTag(publication.tag)}/>
         </Card>
     );
 }
-
-export default BlogCard;
 
 BlogCard.propTypes = {
     publication: PropTypes.shape({
@@ -81,3 +74,5 @@ BlogCard.propTypes = {
         title: PropTypes.string,
     }).isRequired
 };
+
+export default BlogCard;
