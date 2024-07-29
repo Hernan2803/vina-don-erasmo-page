@@ -10,7 +10,7 @@ function Blog() {
     return (
         <section className={'pt-20 pb-12 lg:pt-[120px] lg:pb-[90px]' + theme.mainBg} id='blog'>
             <h2 className={theme.sectionText}>Novedades</h2>
-            <div className='py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6'>
+            <div className='py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'>
                 {publications.map(publication => (
                     <BlogCard key={'publicationtCard' + publication.id} publication={publication}/>
                 ))}
