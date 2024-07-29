@@ -1,5 +1,6 @@
 import { ThemeContext } from './../context/ThemeContext'
 import { useContext } from 'react'
+import MarkdownRenderer from './../utils/MarkdownRenderer';
 import data from "./../context/AboutContext.json"
 
 function About() {
@@ -39,10 +40,10 @@ function About() {
                                 {data.name}
                             </h2>
                             <p className="mb-5 text-base text-body-color dark:text-dark-6">
-                                {data.slogan}
+                                <MarkdownRenderer markdown={data.slogan}/>
                             </p>
                             <p className="mb-8 text-base text-body-color dark:text-dark-6">
-                                {data.description}
+                                <MarkdownRenderer markdown={data.description}/>
                             </p>
                         </div>
                     </div>
