@@ -5,20 +5,22 @@ import DarkModeIcon from '@mui/icons-material/DarkMode';
 
 const themeLight = ({
     "buttonIcon" : <DarkModeIcon className="text-neutral-700"/>,
+    "activeNavbar" : " font-bold text-main-purple-100",
+    "cardBg": " bg-main-purple-100",
+    "cardText": " text-main-purple-950",
     "folder" : "light",
-    "scrollbar": " light-scrollbar",
+    "footerBg": " bg-main-purple-300",
+    "hoverNavbar" : " hover:font-bold hover:underline hover:text-main-green-700",
     "iconHover": " text-neutral-700 hover:text-black",
+    "scrollbar": " light-scrollbar",
     "mainBg" : " bg-neutral-200",
-    "primaryText" : " text-main-purple-700",
-    "secondaryText" : " text-main-green-900",
+    "mainText" : " text-black",
+    "navbarBg": " bg-main-purple-900",
+    "highText" : " text-main-purple-800",
     "sectionText": " font-bold text-4xl text-main-purple-700",
     "softBg" : " bg-white/40",
-    "mainText" : " text-black",
-    "activeNavbar" : " font-bold text-main-purple-100",
-    "hoverNavbar" : " hover:font-bold hover:underline hover:text-main-green-700",
     "textNavbar" : " text-gray-700",
-    "navbarBg": " bg-main-purple-900",
-    "footerBg": " bg-main-purple-300"
+    "titleText": " text-main-purple-950",
 });
 
 export const ThemeContext = createContext();
