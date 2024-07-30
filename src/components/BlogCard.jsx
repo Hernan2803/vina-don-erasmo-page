@@ -8,6 +8,7 @@ import ZoomOutMapIcon from '@mui/icons-material/ZoomOutMap';
 import blogTag from './../context/BlogTagContext.jsx';
 import ExpandedInfo from './ExpandedInfo.jsx';
 import getDateConverted from './../utils/getDateConverted';
+import MarkdownRenderer from './../utils/MarkdownRenderer';
 
 const ExpandMore = styled((props) => {
     const { expand, ...other } = props;
@@ -44,7 +45,7 @@ function BlogCard({publication}) {
         <Card sx={{ maxWidth: 345 }}>
             <CardHeader
                 avatar={
-                    <Avatar sx={{ bgcolor: red[500] }} aria-label='recipe'>
+                    <Avatar>
                         {getIconTag(publication.tag)}
                     </Avatar>
                 }
@@ -53,12 +54,12 @@ function BlogCard({publication}) {
             />
             <CardMedia component='img' height='194' image={publication.image} alt={publication.title + ' image'}/>
             <CardContent>
-                <Typography variant='body2' color='text.secondary'>
-                {publication.description}
+                <Typography variant='body2'>
+                    <MarkdownRenderer markdown={publication.description}/>
                 </Typography>
             </CardContent>
             <CardActions disableSpacing>
-                <ExpandMore expand={expanded} onClick={() => handleExpandClick()} aria-label='show more'><ZoomOutMapIcon/></ExpandMore>
+                <ExpandMore expand={expanded} onClick={() => handleExpandClick()} aria-label='show more' className='bg-main-purple-300'><ZoomOutMapIcon/></ExpandMore>
             </CardActions>
             <ExpandedInfo data={publication} expanded={expanded} setExpanded={handleExpandClick} icon={getIconTag(publication.tag)}/>
         </Card>
