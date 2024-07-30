@@ -14,6 +14,51 @@ const themeLight = createTheme({
 
     typography: {
         fontFamily: `"Montserrat", sans-serif`
+    },
+    components: {
+        MuiAvatar: {
+            styleOverrides: {
+                root: {
+                    backgroundColor: '#861551',
+                    color: '#fdf2f9'
+                }
+            }
+        },
+        MuiCard: {
+            styleOverrides: {
+                root: {
+                    backgroundColor: '#fdf2f9'
+                }
+            }
+        },
+        MuiCardHeader: {
+            styleOverrides: {
+                root: {
+                    color: '#560530'
+                }
+            }
+        },
+        MuiDialog: {
+            styleOverrides: {
+                paper: {
+                    backgroundColor: '#fdf2f9'
+                }
+            }
+        },
+        MuiDialogContentText: {
+            styleOverrides: {
+                root: {
+                    color: '#0a0a0a'
+                }
+            }
+        },
+        MuiDialogTitle: {
+            styleOverrides: {
+                root: {
+                    color: '#560530'
+                }
+            }
+        },
     }
 });
 
