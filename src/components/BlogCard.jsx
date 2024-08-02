@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { ThemeContext } from './../context/ThemeContext';
-import { red } from '@mui/material/colors';
 import { styled } from '@mui/material/styles';
 import {Avatar, Card, CardHeader, CardMedia, CardContent, CardActions, IconButton, Typography} from '@mui/material';
 import ZoomOutMapIcon from '@mui/icons-material/ZoomOutMap';
